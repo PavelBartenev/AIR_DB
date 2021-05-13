@@ -6,7 +6,8 @@ create table air_travels_db.aircraft
     model text not null,
     num_of_seats int,
     num_of_floors int not null,
-    manufacturer_id int
+    manufacturer_id int,
+    airline int
 );
 
 create unique index aircraft_id_index
@@ -35,8 +36,7 @@ create table air_travels_db.flight
     flight_id serial not null,
     departure_airport int not null,
     arrival_airport int not null,
-    aircraft_model int not null,
-    airline int not null
+    aircraft_id int not null
 );
 
 create unique index flight_id_index
@@ -50,7 +50,7 @@ create table air_travels_db.airport
 (
   airport_id serial not null,
   name text not null,
-  country text not null,
+  country_id int not null,
   passengers_per_year int
 );
 
@@ -60,6 +60,20 @@ create unique index airport_id_index
 alter table air_travels_db.airport
         add constraint airport_pk
             primary key (airport_id);
+
+create table air_travels_db.country
+(
+    country_id serial not null,
+    country_name text not null
+);
+
+create unique index country_id_index
+        on air_travels_db.country (country_id);
+
+alter table air_travels_db.country
+        add constraint country_pk
+            primary key (country_id);
+
 
 create table air_travels_db.airline
 (
@@ -105,7 +119,6 @@ create table air_travels_db.prices
 (
     price_id serial not null,
     flight_id int not null,
-    airline_id int not null,
     class text not null,
     price int
 );
@@ -128,7 +141,9 @@ alter table air_travels_db.tweet
 
 alter table air_travels_db.aircraft
         add constraint manufacturer_id
-            foreign key (manufacturer_id) references air_travels_db.manufacturer;
+            foreign key (manufacturer_id) references air_travels_db.manufacturer,
+        add constraint airline_id
+            foreign key (airline) references air_travels_db.airline;
 
 
 alter table air_travels_db.flight
@@ -136,10 +151,8 @@ alter table air_travels_db.flight
             foreign key (arrival_airport) references air_travels_db.airport,
         add constraint departure_airport
             foreign key (departure_airport) references air_travels_db.airport,
-        add constraint airline
-            foreign key (airline) references air_travels_db.airline,
         add constraint aircraft
-            foreign key (aircraft_model) references air_travels_db.aircraft;
+            foreign key (aircraft_id) references air_travels_db.aircraft;
 
 
 alter table air_travels_db.tweet
@@ -152,7 +165,10 @@ alter table air_travels_db.airline
 
 
 alter table air_travels_db.prices
-        add constraint airline
-            foreign key (airline_id) references air_travels_db.airline,
         add constraint flight
             foreign key (flight_id) references air_travels_db.flight;
+
+
+alter table air_travels_db.airport
+        add constraint country
+            foreign key (country_id) references air_travels_db.country
