@@ -256,3 +256,30 @@ insert into air_travels_db.prices(flight_id, class, price) values (8, 'business'
 insert into air_travels_db.prices(flight_id, class, price) values (9, 'business', 320);
 insert into air_travels_db.prices(flight_id, class, price) values (10, 'business', 500);
 insert into air_travels_db.prices(flight_id, class, price) values (1, 'business', 400);
+                             
+                             
+                             
+                             
+                             
+                             
+/*/////////////////////////////////////////////////////////////////////////////////// */
+
+insert into air_travels_db.aircraft(model, num_of_seats, num_of_floors, manufacturer_id, airline)
+values ('Airbus', 200, 1, 20, 3);
+
+insert into air_travels_db.aircraft(model, num_of_seats, num_of_floors, manufacturer_id, airline)
+values ('Airbus', 200, 1, 3, -1);
+
+update air_travels_db.prices set class='high' where class='business';
+
+insert into air_travels_db.manufacturer(name, annual_revenue, country_id)
+values ('name', 3, 15);
+
+update air_travels_db.flight set departure_airport=0 where arrival_airport=1;
+
+insert into air_travels_db.airline(passengers_per_year, num_of_aircrafts, alliance_id, name)
+values (1, 20, 30, 'air');
+
+delete from air_travels_db.country where country_name='Japan';
+
+/*//////////////////////////////////////////////////////////////////////////////////////
