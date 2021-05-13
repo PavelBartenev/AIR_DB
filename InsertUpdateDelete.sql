@@ -222,3 +222,37 @@ insert into air_travels_db.tweet(author_name, satisfaction, flight_id) values ('
 insert into air_travels_db.tweet(author_name, satisfaction, flight_id) values ('Kate', 3, 2);
 insert into air_travels_db.tweet(author_name, satisfaction, flight_id) values ('Elizabeth', 6, 8);
 
+
+
+
+insert into air_travels_db.prices(flight_id, class, price) values (1, 'economy', 230);
+insert into air_travels_db.prices(flight_id, class, price) values (2, 'economy', 300);
+insert into air_travels_db.prices(flight_id, class, price) values (3, 'economy', 410);
+insert into air_travels_db.prices(flight_id, class, price) values (4, 'economy', 340);
+insert into air_travels_db.prices(flight_id, class, price) values (5, 'economy', 500);
+insert into air_travels_db.prices(flight_id, class, price) values (6, 'economy', 180);
+insert into air_travels_db.prices(flight_id, class, price) values (7, 'economy', 300);
+insert into air_travels_db.prices(flight_id, class, price) values (8, 'economy', 390);
+insert into air_travels_db.prices(flight_id, class, price) values (9, 'economy', 190);
+insert into air_travels_db.prices(flight_id, class, price) values (10, 'economy', 210);
+insert into air_travels_db.prices(flight_id, class, price) values (1, 'economy', 400);
+insert into air_travels_db.prices(flight_id, class, price) values (2, 'comfort', 390);
+insert into air_travels_db.prices(flight_id, class, price) values (3, 'comfort', 520);
+insert into air_travels_db.prices(flight_id, class, price) values (4, 'comfort', 410);
+insert into air_travels_db.prices(flight_id, class, price) values (5, 'comfort', 550);
+insert into air_travels_db.prices(flight_id, class, price) values (6, 'comfort', 240);
+insert into air_travels_db.prices(flight_id, class, price) values (7, 'comfort', 340);
+insert into air_travels_db.prices(flight_id, class, price) values (8, 'comfort', 420);
+insert into air_travels_db.prices(flight_id, class, price) values (9, 'comfort', 220);
+insert into air_travels_db.prices(flight_id, class, price) values (10, 'comfort', 300);
+insert into air_travels_db.prices(flight_id, class, price) values (1, 'business', 510);
+insert into air_travels_db.prices(flight_id, class, price) values (2, 'business', 450);
+insert into air_travels_db.prices(flight_id, class, price) values (3, 'business', 600);
+insert into air_travels_db.prices(flight_id, class, price) values (4, 'business', 450);
+insert into air_travels_db.prices(flight_id, class, price) values (5, 'business', 610);
+insert into air_travels_db.prices(flight_id, class, price) values (6, 'business', 350);
+insert into air_travels_db.prices(flight_id, class, price) values (7, 'business', 420);
+insert into air_travels_db.prices(flight_id, class, price) values (8, 'business', 510);
+insert into air_travels_db.prices(flight_id, class, price) values (9, 'business', 320);
+insert into air_travels_db.prices(flight_id, class, price) values (10, 'business', 500);
+insert into air_travels_db.prices(flight_id, class, price) values (1, 'business', 400);
