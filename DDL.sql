@@ -21,7 +21,8 @@ create table air_travels_db.manufacturer
 (
     manufacturer_id serial not null,
     name text not null,
-    annual_revenue int
+    annual_revenue int,
+    country_id int not null
 );
 
 create unique index manufacturer_id_index
@@ -80,7 +81,8 @@ create table air_travels_db.airline
     airline_id serial not null,
     passengers_per_year int,
     num_of_aircrafts int,
-    alliance_id int
+    alliance_id int,
+    name text
 );
 
 create unique index airline_id_index
@@ -94,7 +96,8 @@ create table air_travels_db.alliance
 (
     alliance_id serial not null,
     num_of_airlines int,
-    foundation_date date not null
+    foundation_date date not null,
+    name text
 );
 
 create unique index alliance_id_index
@@ -171,4 +174,8 @@ alter table air_travels_db.prices
 
 alter table air_travels_db.airport
         add constraint country
-            foreign key (country_id) references air_travels_db.country
+            foreign key (country_id) references air_travels_db.country;
+
+alter table air_travels_db.manufacturer
+        add constraint country
+            foreign key (country_id) references air_travels_db.country;
